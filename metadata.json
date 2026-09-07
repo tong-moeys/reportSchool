@@ -1,0 +1,7 @@
+{
+  "name": "របាយការណ៍បូកសរុបលទ្ធផលការងារអប់រំ",
+  "description": "ប្រព័ន្ធគ្រប់គ្រង និងបូកសរុបរបាយការណ៍ការងារអប់រំ ផ្នែកបឋមសិក្សា (Educational Summary Report for Primary School)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

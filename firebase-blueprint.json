@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "SchoolReport": {
+      "title": "SchoolReport",
+      "description": "Primary school annual report and statistics",
+      "type": "object",
+      "properties": {
+        "gradeComparisons": {
+          "type": "array",
+          "description": "Comparison of student metrics across grades"
+        },
+        "schoolInfo": {
+          "type": "object",
+          "description": "General school identity and metadata"
+        },
+        "staffInfo": {
+          "type": "object",
+          "description": "Staff and leadership members list"
+        }
+      }
+    },
+    "Teacher": {
+      "title": "Teacher",
+      "description": "Detailed teacher record covering 66 demographic, curriculum, and semester performance indicators",
+      "type": "object",
+      "properties": {
+        "teacherId": {
+          "type": "string",
+          "description": "Official teacher identification number"
+        },
+        "teacherName": {
+          "type": "string",
+          "description": "Full name of the teacher"
+        },
+        "schoolCode": {
+          "type": "string",
+          "description": "School ministry code"
+        },
+        "schoolName": {
+          "type": "string",
+          "description": "School name"
+        },
+        "position": {
+          "type": "string",
+          "description": "Position or role"
+        },
+        "grade": {
+          "type": "string",
+          "description": "Assigned class grade"
+        },
+        "studentTotal": {
+          "type": "number",
+          "description": "Total number of students"
+        },
+        "female": {
+          "type": "number",
+          "description": "Number of female students"
+        }
+      },
+      "required": ["teacherName"]
+    }
+  },
+  "firestore": {
+    "/schoolReports/{reportId}": {
+      "schema": "SchoolReport",
+      "description": "Annual primary school reports"
+    },
+    "/teacherData/{teacherId}": {
+      "schema": "Teacher",
+      "description": "Teacher data records collection"
+    }
+  }
+}
