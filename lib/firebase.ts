@@ -1,6 +1,12 @@
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
+import { getFirestore, Firestore } from 'firebase/firestore';
 import firebaseConfig from '../firebase-applet-config.json';
 
-export const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
+export const app: FirebaseApp = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+
+export const db: Firestore = getFirestore(
+  app,
+  firebaseConfig.firestoreDatabaseId && firebaseConfig.firestoreDatabaseId.trim() !== ''
+    ? firebaseConfig.firestoreDatabaseId
+    : '(default)'
+);
